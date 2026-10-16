@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three.module.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 
-const VERSION_CODE = 1;
+const VERSION_CODE = 2;
 const UPDATE_URL = 'https://raw.githubusercontent.com/jjjjjjjjjjjjjjae-hub/al-Strike/main/update.json';
 const MODEL_URL = './models/ALMAS_Animations_1_2_LIGHT.glb';
 const $ = (selector) => document.querySelector(selector);
@@ -17,7 +17,7 @@ const panelContent = $('#panel-content');
 const stage = $('#character-stage');
 const canvas = $('#character-canvas');
 
-const defaults = { graphics: 'medium', sound: true, animation: true, sensitivity: 50 };
+const defaults = { graphics: 'high', sound: true, animation: true, sensitivity: 50 };
 let settings = { ...defaults };
 try { settings = { ...defaults, ...JSON.parse(localStorage.getItem('alStrikeSettings') || '{}') }; } catch (_) {}
 
@@ -137,7 +137,7 @@ function loadModel() {
 
 function setupScene(gltf) {
   if (renderer) return;
-  renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'high-performance' });
+  renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.5;
