@@ -29,7 +29,8 @@ jobs:
         run: |
           mkdir -p app/src/main/assets/models
           cat model-parts/part-*.bin > app/src/main/assets/models/ALMAS_Animations_1_2_LIGHT.glb
-          test "$(wc -c < app/src/main/assets/models/ALMAS_Animations_1_2_LIGHT.glb)" -eq 31872476
+          test "$(wc -c < app/src/main/assets/models/ALMAS_Animations_1_2_LIGHT.glb)" -eq 33930748
+          echo '5800b069b8000e69bcccc4a1f4e9466c14d175ca39d1da7ad4e91f3d4dd5ae4b  app/src/main/assets/models/ALMAS_Animations_1_2_LIGHT.glb' | sha256sum -c -
       - name: Assemble debug APK
         run: gradle --no-daemon assembleDebug
       - uses: actions/upload-artifact@v4

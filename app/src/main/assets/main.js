@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three.module.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 
-const VERSION_CODE = 2;
+const VERSION_CODE = 3;
 const UPDATE_URL = 'https://raw.githubusercontent.com/jjjjjjjjjjjjjjae-hub/al-Strike/main/update.json';
 const MODEL_URL = './models/ALMAS_Animations_1_2_LIGHT.glb';
 const $ = (selector) => document.querySelector(selector);

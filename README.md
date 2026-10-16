@@ -18,7 +18,7 @@ The APK is written to `app/build/outputs/apk/debug/app-debug.apk`. GitHub Action
 
 ## Assets and updates
 
-- The character preserves the supplied model's geometry and both animation clips, including `Idle_#1_Original`. Full-resolution textures were restored from the matching ALMAS character asset. GitHub stores the model in ordered `model-parts/` chunks, which the build rejoins.
+- The character is the exact unmodified `ALMAS_Animations_1_2_LIGHT.glb` supplied by the user at `D:\ALMAS_Animations_1_2_LIGHT.glb`. Its SHA-256 is `5800b069b8000e69bcccc4a1f4e9466c14d175ca39d1da7ad4e91f3d4dd5ae4b`. The first clip is `Idle_#1_Original`. GitHub stores the GLB in ordered `model-parts/` chunks; the build rejoins them and verifies the hash before assembling the APK.
 - To add the splash photo later, replace the CSS background or add an image in `app/src/main/assets/` and reference it from `style.css`.
 - `update.json` is read from this repository's `main` branch. Increment `versionCode` and set `downloadUrl` to a GitHub release when publishing a new APK. Android asks the user to approve installation; the app cannot silently install updates.
 - Three.js 0.163.0 is bundled in `app/src/main/assets/vendor/` under its MIT license.
