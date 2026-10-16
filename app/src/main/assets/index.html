@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#080c14">
+  <title>al-Strike</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.js" } }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <section id="splash" class="screen splash is-active" aria-label="Бастапқы экран">
+      <div class="splash-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="splash-copy">
+        <p class="eyebrow">ҰСЫНАДЫ</p>
+        <h1>ALMAS<br><em>OFFICIAL</em></h1>
+        <div class="splash-rule"></div>
+        <p>AL-STRIKE ЖОБАСЫ</p>
+      </div>
+    </section>
+
+    <section id="loading" class="screen loading" aria-label="Жүктелу">
+      <div class="loading-backdrop"></div>
+      <div class="loading-content">
+        <div class="brand-small">al<span>·</span>Strike</div>
+        <p class="eyebrow">ALMAS OFFICIAL</p>
+        <h2 id="loading-title">Ойын дайындалуда</h2>
+        <p id="loading-status">Жүктелуде…</p>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <div class="loading-meta"><span id="progress-value">0%</span><span>v0.1.0</span></div>
+        <div id="loading-actions" class="loading-actions" hidden></div>
+      </div>
+    </section>
+
+    <section id="lobby" class="screen lobby" aria-label="Лобби">
+      <div class="lobby-grid" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="brand"><span class="brand-angle">◢</span> al<span>·</span>Strike</div>
+        <div class="topbar-right">
+          <div class="build-pill"><span class="live-dot"></span> АЛҒАШҚЫ НҰСҚА</div>
+          <button class="icon-button" type="button" data-panel="settings" aria-label="Баптаулар">⚙</button>
+          <button class="profile-pill" type="button" data-panel="profile"><span class="avatar">A</span><span>Ойыншы</span></button>
+        </div>
+      </header>
+
+      <div class="lobby-body">
+        <aside class="left-rail">
+          <p class="eyebrow">ТАКТИКАЛЫҚ ОЙЫН</p>
+          <h2>ШЕШІМ<br>СЕНІҢ<br><em>ҚОЛЫҢДА.</em></h2>
+          <p class="rail-note">Әр раунд маңызды. Дайын болғанда командаңмен алаңға шық.</p>
+          <button class="play-button" type="button" data-panel="play"><span class="play-icon">▶</span><span>ОЙНАУ</span><span class="arrow">↗</span></button>
+          <nav class="rail-nav" aria-label="Лобби мәзірі">
+            <button type="button" data-panel="inventory"><span>▤</span> Қару-жарақ <b>↗</b></button>
+            <button type="button" data-panel="friends"><span>♟</span> Достар <b>↗</b></button>
+            <button type="button" data-panel="settings"><span>⚙</span> Баптаулар <b>↗</b></button>
+          </nav>
+        </aside>
+
+        <div class="character-stage" id="character-stage" aria-label="ALMAS кейіпкерінің 3D көрінісі">
+          <div class="stage-halo"></div>
+          <div class="stage-ring ring-one"></div>
+          <div class="stage-ring ring-two"></div>
+          <canvas id="character-canvas"></canvas>
+          <div class="stage-label"><span class="stage-index">01 / ALMAS</span><span>НЕГІЗГІ КЕЙІПКЕР</span></div>
+        </div>
+
+        <aside class="right-rail">
+          <div class="brief-card">
+            <div class="brief-top"><span>МАУСЫМ 01</span><span class="brief-cross">✛</span></div>
+            <h3>ЖАҢА<br>БАСТАУ</h3>
+            <p>al-Strike әлеміне қош келдің.</p>
+            <div class="brief-line"></div>
+            <p class="brief-foot">ЛОББИ • v0.1.0</p>
+          </div>
+          <div class="mode-card"><span class="mode-symbol">◎</span><div><small>РЕЖИМ</small><strong>Командалық шайқас</strong></div></div>
+        </aside>
+      </div>
+
+      <footer class="bottom-bar"><span>ALMAS OFFICIAL</span><span>Кейіпкерді айналдыру үшін сырғыт</span><span>v0.1.0</span></footer>
+    </section>
+
+    <div id="overlay" class="overlay" hidden>
+      <div class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+        <div class="panel-header"><div><p class="eyebrow">al-Strike</p><h2 id="panel-title"></h2></div><button id="close-panel" class="close-button" type="button" aria-label="Жабу">×</button></div>
+        <div id="panel-content" class="panel-content"></div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
